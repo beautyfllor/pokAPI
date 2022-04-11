@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/header.css">
+    <link rel="stylesheet" type="text/css" href="./css/cards.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer.css">
+    <link rel="stylesheet" type="text/css" href="./css/modal.css">
+    <script src="./js/main.js" defer></script>
+    <script src="./js/modal.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>PokAPI</title>
+</head>
+<body>
+    <header>
+        <a href="https://www.pokemon.com/br/" target="blank">
+            <img src="./img/Pokemon-Logo.png" alt="logo" id="logo" class="logo">
+        </a>
+        <input type="text" placeholder="Pesquise um pokémon..." id="pesquisa" class="pesquisa" list="lista-pokemons">
+        <datalist id="lista-pokemons"></datalist>
+        <button id="btnPesquisar" class="pesquisar">Pesquisar</button>
+    </header>
+    <main>
+        <!-- <div id="container-cards" class="container-cards">
+            <div id="card" class="card">
+                <div id="image-container" class="image-container">
+                    <img src="" alt="" class="image" id="image">
+                </div>
+                <div id="divNumero" class="divNumero">
+                    <p class="numero">numero</p>
+                </div>
+                <div class="divNome" id="divNome">
+                    <p class="nome">Titulo</p>
+                </div>
+                <button id="detalhes" class="detalhes">Detalhes</button>
+            </div>
+        </div> -->
+
+            <div class="modalContainer" id="modalContainer">
+                <div class="modalContent" id="modalContent">
+                    <div class="textModal" id="textModal">
+                        <h1 class="h1"></h1>
+                        <p class="desc"></p>
+                    </div>
+                    <div class="imgPokemon">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <p class="copy">Copyright 2022 © | Florbela Freitas</p>
+        </div>
+    </footer>      
+</body>
+</html>
