@@ -1,3 +1,1 @@
-# marvelAPI
-# PokAPI
 # pokAPI
