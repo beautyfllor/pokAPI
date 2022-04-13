@@ -27,3 +27,9 @@ const filtrarPesquisa = async () => {
 
 pesquisar.addEventListener("click", filtrarPesquisa)
 
+pesquisa.addEventListener('keyup', function(e) {
+    var key = e.which || e.keyCode;
+    if(key == 13) {
+        filtrarPesquisa()
+    }
+});

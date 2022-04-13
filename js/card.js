@@ -54,7 +54,7 @@ const criarCard = async (pokemon) => {
 }
 
 const gerarCards = async () => {
-    while(index <= 250) {
+    while(index <= 151) {
         const pokemon = await pesquisarPokemon(index)
         pokemons.push(await criarCard(pokemon))
         index++

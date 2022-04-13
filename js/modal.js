@@ -1,12 +1,13 @@
 'use strict'
 
-// const pesquisarPokemon = async (index) => {
-//     const url = `https://pokeapi.co/api/v2/pokemon/${index}`
-//     const response = await fetch(url)
-//     const data = await response.json()
-//     console.log(data.front_default)
-//     // return data
-// }
+const pesquisarCaracteristica = async (index) => {
+    const url = `https://pokeapi.co/api/v2/characteristic/${index}/`
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log(data)
+    return data
+}
+pesquisarCaracteristica(15)
 
 const pesquisarPokemon = async (index) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${index}/`
@@ -46,8 +47,8 @@ const criarModal = async (pokemon) => {
 
 const gerarModal = async () => {
     const pokemon = await pesquisarPokemon(5)
-    // console.log(pokemon)
-    console.log( await criarModal(pokemon))
+    console.log(pokemon)
+    // console.log( await criarModal(pokemon))
 }
 
 gerarModal()
