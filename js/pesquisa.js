@@ -1,30 +1,29 @@
 'use strict'
 
-import {pesquisarPokemon, criarCard, gerarCards} from "./card"
-import { criarModal } from "./modal"
+import {pesquisarPokemon} from "./card.js"
+import { criarModal } from "./modal.js"
 
-const container = document.querySelector('#container-cards')
+const container = document.querySelector('#modalContainer')
+const containerCards = document.querySelector('#container-cards')
 const pesquisar = document.querySelector('#btnPesquisar')
 const pesquisa = document.querySelector('#pesquisa')
 
 const pesquisarPokemonNome = async (pokemon) => {
-
-    console.log(pokemon)
         if(pokemon.name == pesquisa.value) {
-            container.innerHTML = ''
-            container.appendChild(await criarCard(pokemon))
+            containerCards.innerHTML = ''
+            container.appendChild(await criarModal(pokemon))
             console.log(container)
     }
 }
 
-const pesquisarPor = async () => {
-    const pokemon = await pesquisarPokemon(index)
+const filtrarPesquisa = async () => {
+    const pokemon = await pesquisarPokemon(pesquisa.value)
     if(pesquisa.value != "") {
         pesquisarPokemonNome(pokemon)
     } else {
-        gerarCards()
+        alert("Digite um nome válido!")
     }
 }
 
-pesquisar.addEventListener("click", pesquisarPor)
+pesquisar.addEventListener("click", filtrarPesquisa)
 

@@ -7,8 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.966);
-    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
     z-index: -1;
     transition: all .5s;
 }
