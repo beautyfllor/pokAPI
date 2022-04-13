@@ -24,22 +24,22 @@ const criarCard = async (pokemon) => {
     let card = document.createElement('div')
     let imageContainer = document.createElement('div')
     let image = document.createElement('img')
+    let divNumNome = document.createElement('div')
     let divNumero = document.createElement('div')
     let numero = document.createElement('p')
     let divNome = document.createElement('div')
     let nome = document.createElement('p')
-    let detalhes = document.createElement('button')
 
     card.setAttribute("class", "card")
     imageContainer.setAttribute("class", "image-container")
     image.setAttribute("src", `${pokemon.sprites.front_default}`)
+    divNumNome.setAttribute("class", "divNumNome")
     divNumero.setAttribute("class", "divNumero")
     numero.setAttribute("class", "numero")
     numero.textContent = `${pokemon.id}`
     divNome.setAttribute("class", "divNome")
     nome.setAttribute("class", "nome")
     nome.textContent = `${pokemon.name}`
-    detalhes.setAttribute("class", "detalhes")
 
     imageContainer.appendChild(image)
     card.appendChild(imageContainer)
@@ -47,7 +47,9 @@ const criarCard = async (pokemon) => {
     card.appendChild(divNumero)
     divNome.appendChild(nome)
     card.appendChild(divNome)
-    card.appendChild(detalhes)
+    divNumNome.appendChild(divNumero)
+    divNumNome.appendChild(divNome)
+    card.appendChild(divNumNome)
     
     return card
 }
@@ -64,8 +66,6 @@ const gerarCards = async () => {
 }
 
 gerarCards()
-
-
 
 export {pesquisarPokemon, criarCard, gerarCards}
 

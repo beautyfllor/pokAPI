@@ -12,7 +12,7 @@ const criarModal = async (pokemon) => {
     let modalContainer = document.createElement("div")
     let modalContent = document.createElement("div")
     let textModal = document.createElement("div")
-    let h1 = document.createElement("h1")
+    let titulo = document.createElement("p")
     let desc= document.createElement("p")
     let imgPokemon = document.createElement("div")
     let img = document.createElement("img")
@@ -20,26 +20,26 @@ const criarModal = async (pokemon) => {
     modalContainer.setAttribute("class", "modalContainer")
     modalContent.setAttribute("class", "modalContent")
     textModal.setAttribute("class", "textModal")
-    h1.setAttribute("class", "titulo")
-    h1.textContent = `${pokemon.name}`
+    titulo.setAttribute("class", "titulo")
+    titulo.textContent = `${pokemon.name}`
     desc.setAttribute("class", "desc")
+    desc.textContent = `${pokemon.characteristic}`
     imgPokemon.setAttribute("class", "imgPokemon")
     img.setAttribute("src", `${pokemon.sprites.front_default}`)
 
-
     modalContainer.appendChild(modalContent)
-    textModal.appendChild(h1)
+    textModal.appendChild(titulo)
     textModal.appendChild(desc)
     imgPokemon.appendChild(img)
 
     return modalContainer
 }
 
+// criarModal()
 
+// const abrirModal = () => document.getElementById('modalContainer').classList.add('active')
+// const fecharModal = () => document.getElementById('modalContainer').classList.remove('active')
 
-const abrirModal = () => document.getElementById('modalContainer').classList.add('active')
-const fecharModal = () => document.getElementById('modalContainer').classList.remove('active')
-
-// document.getElementById('detalhes').addEventListener('click', abrirModal)
+// document.getElementById('card').addEventListener('click', criarModal)
 // document.getElementById('modalContainer').addEventListener('click', fecharModal)
 

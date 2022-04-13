@@ -19,8 +19,8 @@ a > .logo{
 
 .pesquisa{
     width: 20%;
-    height: 50%;
-    margin-top: 1.5%;
+    height: 40%;
+    margin-top: 2.2%;
     margin-left: 50%;
     padding-left: 1%;
     border: none;
@@ -38,4 +38,8 @@ a > .logo{
     color: #000000;
     font-family: 'Roboto', sans-serif;
     font-size: clamp(0.2rem, 5vw, 0.9rem);
+}
+
+.pesquisar:hover{
+    background-color: #FFCC00;
 }
