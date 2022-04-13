@@ -1,11 +1,19 @@
 'use strict'
 
+// const pesquisarPokemon = async (index) => {
+//     const url = `https://pokeapi.co/api/v2/pokemon/${index}`
+//     const response = await fetch(url)
+//     const data = await response.json()
+//     console.log(data.front_default)
+//     // return data
+// }
+
 const pesquisarCaracteristica = async (index) => {
     const url = `https://pokeapi.co/api/v2/characteristic/${index}/`
     const response = await fetch(url)
     const data = await response.json()
     console.log(data)
-    return data
+    // return data
 }
 
 const criarModal = async (pokemon) => {
@@ -27,15 +35,15 @@ const criarModal = async (pokemon) => {
     imgPokemon.setAttribute("class", "imgPokemon")
     img.setAttribute("src", `${pokemon.sprites.front_default}`)
 
-    modalContainer.appendChild(modalContent)
     textModal.appendChild(titulo)
     textModal.appendChild(desc)
     imgPokemon.appendChild(img)
+    modalContainer.appendChild(modalContent)
 
     return modalContainer
 }
 
-// criarModal()
+console.log(criarModal(await pesquisarCaracteristica(5)))
 
 // const abrirModal = () => document.getElementById('modalContainer').classList.add('active')
 // const fecharModal = () => document.getElementById('modalContainer').classList.remove('active')
