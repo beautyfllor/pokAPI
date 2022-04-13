@@ -1,29 +1,30 @@
-// 'use strict'
+'use strict'
 
-// import {pesquisarPokemon, criarCard, gerarCards} from "./card"
+import {pesquisarPokemon, criarCard, gerarCards} from "./card"
+import { criarModal } from "./modal"
 
-// const container = document.querySelector('#container-cards')
-// const pesquisar = document.querySelector('#btnPesquisar')
-// const pesquisa = document.querySelector('#pesquisa')
+const container = document.querySelector('#container-cards')
+const pesquisar = document.querySelector('#btnPesquisar')
+const pesquisa = document.querySelector('#pesquisa')
 
-// const pesquisarPokemonNome = async () => {
-//     for(let index = 1; index <= 250; index++) {
-//         const pokemon = await pesquisarPokemon(index)
-//         if(pokemon.name == pesquisa.value) {
-//             container.innerHTML = ''
-//             container.setAttribute("class", "cards")
-//             container.appendChild(await criarCard(pokemon))
-//         }
-//     }
-// }
+const pesquisarPokemonNome = async (pokemon) => {
 
-// const pesquisarPor = async () => {
-//     if(pesquisa.value != "") {
-//         pesquisarPokemonNome()
-//     } else {
-//         gerarCards()
-//     }
-// }
+    console.log(pokemon)
+        if(pokemon.name == pesquisa.value) {
+            container.innerHTML = ''
+            container.appendChild(await criarCard(pokemon))
+            console.log(container)
+    }
+}
 
-// pesquisar.addEventListener("click", pesquisarPor)
+const pesquisarPor = async () => {
+    const pokemon = await pesquisarPokemon(index)
+    if(pesquisa.value != "") {
+        pesquisarPokemonNome(pokemon)
+    } else {
+        gerarCards()
+    }
+}
+
+pesquisar.addEventListener("click", pesquisarPor)
 

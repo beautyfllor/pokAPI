@@ -8,12 +8,12 @@
 //     // return data
 // }
 
-const pesquisarCaracteristica = async (index) => {
-    const url = `https://pokeapi.co/api/v2/characteristic/${index}/`
+const pesquisarPokemon = async (index) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${index}/`
     const response = await fetch(url)
     const data = await response.json()
     console.log(data)
-    // return data
+    return data
 }
 
 const criarModal = async (pokemon) => {
@@ -38,12 +38,22 @@ const criarModal = async (pokemon) => {
     textModal.appendChild(titulo)
     textModal.appendChild(desc)
     imgPokemon.appendChild(img)
+    modalContent.appendChild(textModal)
+    modalContent.appendChild(imgPokemon)
     modalContainer.appendChild(modalContent)
 
     return modalContainer
 }
 
-console.log(criarModal(await pesquisarCaracteristica(5)))
+const gerarModal = async () => {
+    const pokemon = await pesquisarPokemon(5)
+    console.log(pokemon)
+    console.log( await criarModal(pokemon))
+}
+
+gerarModal()
+
+export {criarModal, gerarModal}
 
 // const abrirModal = () => document.getElementById('modalContainer').classList.add('active')
 // const fecharModal = () => document.getElementById('modalContainer').classList.remove('active')

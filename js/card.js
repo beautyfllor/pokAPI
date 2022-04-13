@@ -15,7 +15,6 @@ const pesquisarPokemon = async (index) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${index}`
     const response = await fetch(url)
     const data = await response.json()
-    // console.log(data)
     return data
 }
 
